@@ -1,1 +1,178 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Surprise ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg,#111827,#581c87,#be185d);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 20px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 40px #0005;
+}
+
+h1 { color: #ffb6d5; }
+
+.heart { font-size: 55px; }
+
+button, input {
+  padding: 13px;
+  margin: 8px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+button {
+  background: #ff4f91;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  width: 90%;
+  text-align: center;
+}
+
+.hidden { display: none; }
+
+.message { line-height: 1.8; }
+
+hr {
+  border: 1px solid #ffffff55;
+  margin: 25px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<h1>Hey Sri Venkatesh!</h1>
+<p>A secret surprise is waiting for you...</p>
+
+<div id="login">
+  <h3>🔐 Secret Password</h3>
+  <input id="password" type="password"
+         placeholder="Enter password">
+  <br>
+  <button onclick="unlock()">Unlock Surprise ❤️</button>
+  <p id="error"></p>
+</div>
+
+<div id="surprise" class="hidden">
+
+<h2>🎉 MISSION UNLOCKED!</h2>
+
+<p class="message">
+Welcome to the most important website of your life 😂
+</p>
+
+<hr>
+
+<h2>🤔 Friendship Quiz</h2>
+<p>Who is the biggest troublemaker?</p>
+
+<button onclick="quiz('You obviously! 😂')">You</button>
+<button onclick="quiz('Definitely Rathna! 🤣')">Rathna</button>
+
+<p id="answer"></p>
+
+<hr>
+
+<h2>😂 Special Roast</h2>
+<p class="message">
+You are not a normal human!<br>
+You are a limited edition headache! 🤣
+</p>
+
+<hr>
+
+<h2>🤝 Secret Mission</h2>
+<p class="message">
+Your mission is to never forget this friendship.
+Complete it for a lifetime!
+</p>
+
+<button onclick="finalMessage()">
+Open Final Surprise 🎁
+</button>
+
+<div id="final" class="hidden">
+
+<hr>
+
+<div class="heart">💖</div>
+
+<h1>Forever Friends!</h1>
+
+<p class="message">
+Dear Sri Venkatesh,<br><br>
+
+Life becomes more memorable with friends like you.
+
+There may be fights, silly jokes and unlimited teasing,
+but true friendship always stays special.<br><br>
+
+Thanks for being part of my journey.<br><br>
+
+<b>From Rathna Kumar ❤️</b>
+</p>
+
+<h2>END OF SURPRISE! 🎉</h2>
+
+</div>
+</div>
+</div>
+
+<script>
+function unlock() {
+  const pass = document.getElementById("password").value;
+
+  if (pass === "311012") {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("surprise").classList.remove("hidden");
+  } else {
+    document.getElementById("error").innerText =
+      "Wrong password! Try again 😂";
+  }
+}
+
+function quiz(answer) {
+  document.getElementById("answer").innerText = answer;
+}
+
+function finalMessage() {
+  document.getElementById("final").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
+
